@@ -4,7 +4,11 @@
 
 (send img load-file "/Users/Pylipala/Pictures/duanyu.png")
 
-(define frm (new frame% [label "Barcode Verifier"]))
+(define frm (new frame% 
+                 [label "Barcode Verifier"]
+                 [width 800]
+                 [height 600]
+                 [alignment '(center center)]))
 
 (define img-pnl (new canvas% 
                      [parent frm]
