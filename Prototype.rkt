@@ -10,10 +10,17 @@
                  [height 600]
                  [alignment '(center center)]))
 
+(define LinearGraph%
+  (class canvas%
+    (field (values #()))
+    
+           
+
 (define img-pnl (new canvas% 
                      [parent frm]
                      [paint-callback
                       (lambda (canvas dc)
                         (send dc draw-bitmap img 0 0))]))
+
 
 (send frm show #t)
