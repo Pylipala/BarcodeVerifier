@@ -1,4 +1,7 @@
-#lang racket/gui
+#lang racket
+
+(require racket/gui)
+(require racket/class)
 
 (define img (make-object bitmap% 1 1))
 
@@ -12,8 +15,14 @@
 
 (define LinearGraph%
   (class canvas%
+    (super-new)
     (field (values #()))
-    
+    (inherit get-dc)
+    (define (on-paint)
+                     (let ([dc (get-dc this)])
+                       (send dc draw-line 10 10 100 100)))
+    (override on-paint)))
+                       
            
 
 (define img-pnl (new canvas% 
